@@ -16,7 +16,7 @@ public class SquareHollow {
                     System.out.print(" ");
                 }
             }
-            System.out.println("");
+            System.out.println();
         }
     }
 }
