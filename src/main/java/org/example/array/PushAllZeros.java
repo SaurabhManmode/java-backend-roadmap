@@ -4,13 +4,13 @@ public class PushAllZeros {
 
     public static void main(String[] args) {
         int[] arr = {1, 0, 4, 0, 5, 0};
-        pushAlzeros(arr);
+        pushAllZeros(arr);
         for (var num : arr) {
             System.out.println(num);
         }
     }
 
-    private static void pushAlzeros(int[] arr) {
+    private static void pushAllZeros(int[] arr) {
 
         int count = 0;
         for (var i = 0; i < arr.length; i++) {
