@@ -6,7 +6,7 @@ import java.util.List;
 public class GenerateAllSubArray {
 
     public static void main(String[] args) {
-        int arr[] = {1, 2, 3};
+        int arr[] = {1, 4,5,3,2};
         List<List<Integer>> list = getAllSubArray(arr);
         System.out.println(list);
     }
