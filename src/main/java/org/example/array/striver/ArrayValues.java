@@ -1,4 +1,4 @@
-package org.example.array;
+package org.example.array.striver;
 
 public class ArrayValues {
     int array[] = new int[5];
