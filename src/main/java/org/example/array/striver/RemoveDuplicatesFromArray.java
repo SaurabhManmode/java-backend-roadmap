@@ -10,6 +10,24 @@ public class RemoveDuplicatesFromArray {
         //bruteforce using set
         Set<Integer> set = removeDups(arr);
         System.out.println(set);
+
+        int newLength = findNewLength(arr);
+        for (int i = 0; i < newLength; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+
+    private static int findNewLength(int[] arr) {
+        int n = arr.length;
+        if (n <= 1)
+            return n;
+        int idx = 1;
+        for (int i = 1; i < n; i++) {
+            if (arr[i] != arr[i - 1]) {
+                arr[idx++] = arr[i];
+            }
+        }
+        return idx;
     }
 
     private static Set<Integer> removeDups(int[] arr) {
@@ -21,4 +39,6 @@ public class RemoveDuplicatesFromArray {
         }
         return set;
     }
+
+
 }
