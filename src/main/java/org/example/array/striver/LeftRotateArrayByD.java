@@ -16,6 +16,7 @@ public class LeftRotateArrayByD {
 
     private static void rotateArrayByD(int[] arr, int d) {
         int n = arr.length;
+        d = d % n;
         int temp[] = new int[d];
         for (int i = 0; i < d; i++) {
             temp[i] = arr[i];
@@ -26,7 +27,7 @@ public class LeftRotateArrayByD {
         }
         int j = 0;
         for (int i = n - d; i < n; i++) {
-            arr[i] = temp[i-(n-d)];
+            arr[i] = temp[i - (n - d)];
             j++;
         }
 
