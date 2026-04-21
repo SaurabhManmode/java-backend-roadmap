@@ -10,8 +10,8 @@ public class LeftRotateArrayByD {
         int d = 3;
         int n = arr.length;
         //having space complexity
-        rotateArrayByD(arr, d);
-        System.out.println(Arrays.toString(arr));
+    /*    rotateArrayByD(arr, d);
+        System.out.println(Arrays.toString(arr));*/
 
         //avoid space
         reverseArray(arr, 0, d - 1);
