@@ -18,10 +18,30 @@ public class TryCatchBasics {
 
 
         // exception supression
-        try{
+        try {
             throw new RuntimeException("try exception");
-        }finally {
+        } finally {
             throw new RuntimeException("Finally exception");
+        }
+
+
+        // order of catch block wrong
+        try {
+            int x = 10 / 0;
+
+        } catch (Exception e) {
+
+        } catch (ArithmeticException e) {
+
+        }
+
+        // correct order
+        try {
+            int x = 10 / 0;
+        } catch (ArithmeticException e) {
+
+        } catch (Exception e) {
+
         }
     }
 
