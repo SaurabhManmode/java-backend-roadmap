@@ -20,7 +20,7 @@ public class TryCatchBasics {
 
 
         // exception supression
-        try {
+    /*    try {
             throw new RuntimeException("try exception");
         } finally {
             throw new RuntimeException("Finally exception");
@@ -74,7 +74,9 @@ public class TryCatchBasics {
     // writing code after throw
     private static void codeAfterThrows(){
         throw new RuntimeException();
-        System.out.println();
+        System.out.println();*/
+
+        System.out.println(expwithFinally());
     }
 
     private static int valueModicationInFinally() {
@@ -89,6 +91,16 @@ public class TryCatchBasics {
 
     static int overridingValuesInFinally() {
         try {
+            return 1;
+        } finally {
+            return 2;
+        }
+    }
+
+    static int expwithFinally() {
+        try {
+            throw new RuntimeException();
+        } catch (Exception e) {
             return 1;
         } finally {
             return 2;
