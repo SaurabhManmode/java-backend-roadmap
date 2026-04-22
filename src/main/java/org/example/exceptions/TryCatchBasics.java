@@ -6,12 +6,25 @@ public class TryCatchBasics {
 
         // skipping finally
         try {
-          //  System.exit(0);
+            //  System.exit(0);
         } finally {
             System.out.println("Hello");
         }
         //values in finally
         System.out.println(overridingValuesInFinally());
+
+        // variable modification in finally
+        System.out.println(valueModicationInFinally());
+    }
+
+    private static int valueModicationInFinally() {
+
+        int x = 1;
+        try {
+            return x;
+        } finally {
+            x = 2;
+        }
     }
 
     static int overridingValuesInFinally() {
