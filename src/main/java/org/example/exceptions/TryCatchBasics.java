@@ -63,6 +63,14 @@ public class TryCatchBasics {
         } catch (ArrayIndexOutOfBoundsException  | NullPointerException en){
             System.out.println("Handled");
         }
+
+
+    }
+
+    // writing code after throw
+    private static void codeAfterThrows(){
+        throw new RuntimeException();
+        System.out.println();
     }
 
     private static int valueModicationInFinally() {
