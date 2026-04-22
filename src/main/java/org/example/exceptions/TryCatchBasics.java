@@ -43,6 +43,12 @@ public class TryCatchBasics {
         } catch (Exception e) {
 
         }
+
+        try{
+            System.out.println("try");
+        }finally {
+            System.out.println("finally");
+        }
     }
 
     private static int valueModicationInFinally() {
