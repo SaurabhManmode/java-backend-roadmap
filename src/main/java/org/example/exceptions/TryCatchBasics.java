@@ -1,5 +1,7 @@
 package org.example.exceptions;
 
+import java.io.FileReader;
+
 public class TryCatchBasics {
 
     public static void main(String[] args) {
@@ -63,6 +65,8 @@ public class TryCatchBasics {
         } catch (ArrayIndexOutOfBoundsException  | NullPointerException en){
             System.out.println("Handled");
         }
+   // checked exception without handling
+        FileReader fr = new FileReader("data.txt");
 
 
     }
