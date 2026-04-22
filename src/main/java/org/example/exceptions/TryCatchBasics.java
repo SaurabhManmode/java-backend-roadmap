@@ -43,11 +43,25 @@ public class TryCatchBasics {
         } catch (Exception e) {
 
         }
-
-        try{
+        // try with finally
+        try {
             System.out.println("try");
-        }finally {
+        } finally {
             System.out.println("finally");
+        }
+
+        //try without catch and finally
+        try {
+            //CTE
+        }
+
+        // catch multiple exceptions
+
+        try {
+            int[] arr = new int[2];
+            arr[5] = 10;
+        } catch (ArrayIndexOutOfBoundsException  | NullPointerException en){
+            System.out.println("Handled");
         }
     }
 
