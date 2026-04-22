@@ -15,6 +15,14 @@ public class TryCatchBasics {
 
         // variable modification in finally
         System.out.println(valueModicationInFinally());
+
+
+        // exception supression
+        try{
+            throw new RuntimeException("try exception");
+        }finally {
+            throw new RuntimeException("Finally exception");
+        }
     }
 
     private static int valueModicationInFinally() {
