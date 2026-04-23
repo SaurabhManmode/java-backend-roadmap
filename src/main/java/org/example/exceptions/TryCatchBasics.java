@@ -1,6 +1,7 @@
 package org.example.exceptions;
 
 import java.io.FileReader;
+import java.io.IOException;
 
 public class TryCatchBasics {
 
@@ -77,6 +78,33 @@ public class TryCatchBasics {
         System.out.println();*/
 
         System.out.println(expwithFinally());
+        nestedTryCatch();
+
+
+    }
+
+    // throw vs throws
+    public static void throwVsThrows() throws IOException {
+        FileReader fr = new FileReader("data.txt");
+
+        try {
+            throw new RuntimeException();
+        } catch (Exception e) {
+
+        }
+    }
+
+    // nested try catch
+    private static void nestedTryCatch() {
+        try {
+            try {
+                int x = 10 / 0;
+            } catch (NullPointerException e) {
+                System.out.println("Inner exception");
+            }
+        } catch (Exception e) {
+            System.out.println("Outer exception");
+        }
     }
 
     private static int valueModicationInFinally() {
