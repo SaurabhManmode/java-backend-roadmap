@@ -86,6 +86,28 @@ public class TryCatchBasics {
         //suppressed exception
         suppressedException();
 
+        //change exception in finally
+       changeExceptionInFinally();
+
+        // notMatchingExceptionBlocks
+        notMatchingExceptionBlocks();
+
+    }
+
+    private static void notMatchingExceptionBlocks() {
+        try {
+            int x = 10 / 0;
+        } catch (NullPointerException e) {
+            System.out.println("NPE");
+        }
+    }
+
+    private static void changeExceptionInFinally(){
+        try {
+            throw new RuntimeException("Try");
+        } finally {
+            System.out.println("Finally");
+        }
     }
 
     public static void suppressedException() {
