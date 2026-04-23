@@ -1,5 +1,8 @@
 package org.example.exceptions;
 
+import java.io.FileReader;
+import java.io.IOException;
+
 public class TryCatchBasics {
 
     public static void main(String[] args) {
@@ -18,7 +21,7 @@ public class TryCatchBasics {
 
 
         // exception supression
-        try {
+    /*    try {
             throw new RuntimeException("try exception");
         } finally {
             throw new RuntimeException("Finally exception");
@@ -63,6 +66,8 @@ public class TryCatchBasics {
         } catch (ArrayIndexOutOfBoundsException  | NullPointerException en){
             System.out.println("Handled");
         }
+   // checked exception without handling
+        FileReader fr = new FileReader("data.txt");
 
 
     }
@@ -70,7 +75,82 @@ public class TryCatchBasics {
     // writing code after throw
     private static void codeAfterThrows(){
         throw new RuntimeException();
-        System.out.println();
+        System.out.println();*/
+
+        System.out.println(expwithFinally());
+        nestedTryCatch();
+
+        //return catch and finally
+        System.out.println(catchPlusfinally());
+
+        //suppressed exception
+        suppressedException();
+
+        //change exception in finally
+       changeExceptionInFinally();
+
+        // notMatchingExceptionBlocks
+        notMatchingExceptionBlocks();
+
+    }
+
+    private static void notMatchingExceptionBlocks() {
+        try {
+            int x = 10 / 0;
+        } catch (NullPointerException e) {
+            System.out.println("NPE");
+        }
+    }
+
+    private static void changeExceptionInFinally(){
+        try {
+            throw new RuntimeException("Try");
+        } finally {
+            System.out.println("Finally");
+        }
+    }
+
+    public static void suppressedException() {
+        try (MyResource mr = new MyResource()) {
+            throw new RuntimeException("Main");
+        } catch (Exception e) {
+
+        }
+    }
+
+    private static int catchPlusfinally() {
+
+        try {
+            int x = 10 / 0;
+        } catch (Exception e) {
+            return 1;
+        } finally {
+            return 2;
+        }
+    }
+
+    // throw vs throws
+    public static void throwVsThrows() throws IOException {
+        FileReader fr = new FileReader("data.txt");
+
+        try {
+            throw new RuntimeException();
+        } catch (Exception e) {
+
+        }
+    }
+
+    // nested try catch
+    private static void nestedTryCatch() {
+        try {
+            try {
+                int x = 10 / 0;
+            } catch (NullPointerException e) {
+                System.out.println("Inner exception");
+            }
+        } catch (Exception e) {
+            System.out.println("Outer exception");
+        }
     }
 
     private static int valueModicationInFinally() {
@@ -85,6 +165,16 @@ public class TryCatchBasics {
 
     static int overridingValuesInFinally() {
         try {
+            return 1;
+        } finally {
+            return 2;
+        }
+    }
+
+    static int expwithFinally() {
+        try {
+            throw new RuntimeException();
+        } catch (Exception e) {
             return 1;
         } finally {
             return 2;

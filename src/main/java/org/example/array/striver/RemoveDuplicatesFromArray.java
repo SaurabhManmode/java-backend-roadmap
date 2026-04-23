@@ -12,7 +12,8 @@ public class RemoveDuplicatesFromArray {
         System.out.println(set);
 
         int newLength = findNewLength(arr);
-        for (int i = 0; i < newLength; i++) {
+        for (int i = 0; i <
+                newLength; i++) {
             System.out.println(arr[i]);
         }
     }
