@@ -80,7 +80,20 @@ public class TryCatchBasics {
         System.out.println(expwithFinally());
         nestedTryCatch();
 
+        //return catch and finally
+        System.out.println(catchPlusfinally());
 
+    }
+
+    private static int catchPlusfinally() {
+
+        try {
+            int x = 10 / 0;
+        } catch (Exception e) {
+            return 1;
+        } finally {
+            return 2;
+        }
     }
 
     // throw vs throws
