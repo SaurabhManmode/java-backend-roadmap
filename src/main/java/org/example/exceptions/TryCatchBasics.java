@@ -83,6 +83,17 @@ public class TryCatchBasics {
         //return catch and finally
         System.out.println(catchPlusfinally());
 
+        //suppressed exception
+        suppressedException();
+
+    }
+
+    public static void suppressedException() {
+        try (MyResource mr = new MyResource()) {
+            throw new RuntimeException("Main");
+        } catch (Exception e) {
+
+        }
     }
 
     private static int catchPlusfinally() {
