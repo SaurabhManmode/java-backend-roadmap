@@ -9,11 +9,14 @@ public final class Employee {
     private final int age;
     private final List<String> skills;
 
-    public Employee(String name, int age, List<String> skills) {
+    private final Address address;
+
+    public Employee(String name, int age, List<String> skills, Address address) {
         this.name = name;
         this.age = age;
         // defensive copy
         this.skills = new ArrayList<>(skills);
+        this.address = address;
     }
 
     public String getName() {
@@ -22,6 +25,15 @@ public final class Employee {
 
     public int getAge() {
         return age;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", skills=" + skills +
+                '}';
     }
 
     public List<String> getSkills() {
