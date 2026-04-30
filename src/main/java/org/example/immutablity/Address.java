@@ -7,4 +7,5 @@ public class Address {
     }
 
     private  String city;
+
 }
