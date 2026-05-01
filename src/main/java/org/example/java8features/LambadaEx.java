@@ -1,5 +1,7 @@
 package org.example.java8features;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,9 +25,9 @@ public class LambadaEx {
 
         // Lambada with collection
 
-        List<String> list = List.of("saurabh", "manmode", "shubham", "mane", "hi", "hello");
+        List<String> nameList = List.of("saurabh", "manmode", "shubham", "mane", "hi", "hello");
         // names start with the s
-        List<String> namesWiths = list.stream()
+        List<String> namesWiths = nameList.stream()
                 .filter(name -> name.startsWith("s"))
                 .collect(Collectors.toList());
         System.out.println(namesWiths);
@@ -38,6 +40,16 @@ public class LambadaEx {
         };
         System.out.println(enclosed.addition(5, 8));
 
+        List<Integer> numList = new ArrayList<>();
+        numList.add(1);
+        numList.add(55);
+        numList.add(4);
+        numList.add(3);
+        numList.add(2);
+
+        //decreasing order
+        Collections.sort(numList, (o1, o2) -> (o1 > o2) ? -1 : (o1 < o2) ? 1 : 0);
+        System.out.println(numList);
 
     }
 }
