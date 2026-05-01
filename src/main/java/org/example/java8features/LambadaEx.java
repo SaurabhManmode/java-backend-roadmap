@@ -51,6 +51,15 @@ public class LambadaEx {
         Collections.sort(numList, (o1, o2) -> (o1 > o2) ? -1 : (o1 < o2) ? 1 : 0);
         System.out.println(numList);
 
+        // creation of thread using lambada
+        Runnable myThread = () -> {
+            Thread.currentThread().setName("Saurabh's Thread");
+            System.out.println(Thread.currentThread().getName());
+        };
+
+        Thread thread = new Thread(myThread);
+        thread.start();
+
     }
 }
 
