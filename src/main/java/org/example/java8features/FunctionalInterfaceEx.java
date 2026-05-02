@@ -2,6 +2,7 @@ package org.example.java8features;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class FunctionalInterfaceEx {
@@ -25,7 +26,25 @@ public class FunctionalInterfaceEx {
         list.add(3);
 
         modify.accept(list);
-
         dispList.accept(list);
+
+        modify.andThen(dispList).accept(list);
+
+        //Biconsumer
+
+        BiConsumer<List<Integer>, List<Integer>> biConsumer = (list1, list2) -> {
+            list1.stream().forEach(a -> System.out.println(a));
+            list2.stream().forEach(a -> System.out.println(a));
+        };
+
+        List<Integer> list1 = List.of(1, 2, 3);
+        List<Integer> list2 = List.of(8, 10, 20);
+
+        biConsumer.accept(list1, list2);
     }
+}
+
+@FunctionalInterface
+interface MyFunctionalInterface {
+    void display();
 }
