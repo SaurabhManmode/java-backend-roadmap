@@ -108,6 +108,19 @@ public class LambadaEx {
         game.start();
         music.start();
 
+        //block lambada
+
+        Factorial f = (n) -> {
+            int res = 1;
+
+            for (int i = 1; i <= n; i++) {
+                res = i * res;
+            }
+            return res;
+        };
+
+        System.out.println("Factorial is " + f.fact(5));
+
     }
 }
 
@@ -140,4 +153,8 @@ class RandomPlayer {
         Thread.sleep(500);
         System.out.println("music ended");
     }
+}
+
+interface Factorial {
+    int fact(int n);
 }
