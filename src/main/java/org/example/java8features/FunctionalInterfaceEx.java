@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public class FunctionalInterfaceEx {
@@ -52,6 +54,15 @@ public class FunctionalInterfaceEx {
                 .filter(n -> n % 2 == 0)
                 .collect(Collectors.toList());
         System.out.println(evenList);
+
+        //function
+        Function<Integer, Double> function = (n) -> n / 2.0;
+        System.out.println(function.apply(10));
+
+        //supplier
+
+        Supplier<Double> supplier = () -> Math.random();
+        System.out.println(supplier.get());
     }
 }
 
