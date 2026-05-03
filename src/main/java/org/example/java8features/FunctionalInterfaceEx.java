@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class FunctionalInterfaceEx {
 
@@ -41,6 +43,15 @@ public class FunctionalInterfaceEx {
         List<Integer> list2 = List.of(8, 10, 20);
 
         biConsumer.accept(list1, list2);
+
+        // predicate
+        Predicate<Integer> predicate = (n) -> n > 10;
+        System.out.println(predicate.test(11));
+
+        List<Integer> evenList = list.stream()
+                .filter(n -> n % 2 == 0)
+                .collect(Collectors.toList());
+        System.out.println(evenList);
     }
 }
 
