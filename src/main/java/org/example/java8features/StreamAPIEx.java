@@ -68,6 +68,22 @@ public class StreamAPIEx {
                 .toList();
         System.out.println(length);
 
+        // sorted
+        List<Integer> unsorted = List.of(4, 5, 8, 1, 0, 2, 6);
+        List<Integer> sorted = unsorted.stream()
+                .sorted()
+                .toList();
+        System.out.println(sorted);
+
+        IntStream random = IntStream.generate(
+                () -> (int) (Math.random() * 100)
+        ).limit(5);
+
+        int[] array = random.sorted()
+                .toArray();
+        System.out.println(Arrays.toString(array));
+
+
     }
 
 
