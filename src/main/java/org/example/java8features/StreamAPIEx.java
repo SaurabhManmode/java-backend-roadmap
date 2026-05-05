@@ -42,13 +42,31 @@ public class StreamAPIEx {
       /*  List<String> capitalStrings = stream.filter(str -> Character.isUpperCase(str.charAt(1)))
                 .collect(Collectors.toList());*/
 
-   //     System.out.println(capitalStrings);
+        //     System.out.println(capitalStrings);
 
         List<String> endsWithS = stream.filter(
                 str -> str.endsWith("s")
         ).collect(Collectors.toList());
 
         System.out.println(endsWithS);
+
+        //2 map
+        List<Integer> nums = List.of(3, 6, 9, 27);
+        List<Integer> multiplication = nums.stream().map(n -> n * 3)
+                .collect(Collectors.toList());
+        System.out.println(multiplication);
+
+        List<String> smallcases = List.of("sauru", "kri", "beed");
+        List<String> upper = smallcases.stream()
+                .map(String::toUpperCase)
+                .toList();
+
+        System.out.println(upper);
+
+        List<Integer> length = smallcases.stream()
+                .map(String::length)
+                .toList();
+        System.out.println(length);
 
     }
 
