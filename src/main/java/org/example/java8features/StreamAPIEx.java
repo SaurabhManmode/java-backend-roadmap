@@ -83,6 +83,13 @@ public class StreamAPIEx {
                 .toArray();
         System.out.println(Arrays.toString(array));
 
+        // distinct
+        List<Integer> dups = List.of(1, 1, 2, 2, 3, 3, 7, 7, 7, 8);
+        List<Integer> distinct = dups.stream()
+                .distinct()
+                .toList();
+        System.out.println(distinct);
+
 
     }
 
