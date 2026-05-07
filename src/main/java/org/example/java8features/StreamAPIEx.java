@@ -90,6 +90,13 @@ public class StreamAPIEx {
                 .toList();
         System.out.println(distinct);
 
+        //skip
+
+        List<Integer> skipped = dups.stream()
+                .skip(4)
+                .toList();
+        System.out.println(skipped);
+
 
     }
 
